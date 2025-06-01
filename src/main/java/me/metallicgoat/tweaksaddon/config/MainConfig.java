@@ -369,6 +369,12 @@ public class MainConfig {
   @Config public static double lock_team_chest_range = 8;
   @Config public static String lock_team_chest_fail_open = "&cYou cannot open this chest until {team} &chas been eliminated.";
 
+  @Config(
+      description = {
+          ""
+      }
+  )
+  public static boolean punch_deposit_chest_enabled = true;
 
   // MISCELLANEOUS
   @SectionTitle(title = "MISCELLANEOUS")

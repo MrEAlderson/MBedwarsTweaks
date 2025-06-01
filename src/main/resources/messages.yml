@@ -3,3 +3,5 @@ Tweaks_SuddenDeath_Upgrade_Description:
   - "After all beds are destroyed"
   - "a dragon will spawn in to"
   - "help defend your team"
+Tweaks_PunchDepositChest_PrivateChest: "&7You deposited x{amount} &f{item}&7 into your &dEnder Chest&7!"
+Tweaks_PunchDepositChest_TeamChest: "&7You deposited x{amount} &f{item}&7 into your &bTeam Chest&7!"
