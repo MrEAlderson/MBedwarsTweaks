@@ -40,7 +40,7 @@ public class ReplaceToolOnBuy implements Listener {
 
       final ItemShopProduct invProduct = GameAPI.get().getItemShopProduct(is);
 
-      if (invProduct == null || invProduct.getItem().getBuyGroupLevel() < level)
+      if (invProduct == null || invProduct.getItem().getBuyGroupLevel() >= level)
         continue;
 
       final BuyGroup checkingGroup = invProduct.getItem().getBuyGroup();

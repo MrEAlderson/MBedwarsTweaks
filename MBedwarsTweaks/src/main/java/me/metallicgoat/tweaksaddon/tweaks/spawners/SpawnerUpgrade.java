@@ -51,6 +51,7 @@ public class SpawnerUpgrade implements Listener {
 
     if (oldLevel != null && oldLevel.getLevel() >= MainConfig.advanced_forge_level)
       return;
+
     if (level.getLevel() < MainConfig.advanced_forge_level)
       return;
 

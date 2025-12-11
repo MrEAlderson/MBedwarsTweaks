@@ -117,6 +117,7 @@ public class Placeholders extends PlaceholderExpansion {
 
         return "";
       }
+
       // Next tier name
       case "next-tier-name": {
         final GenTiers.GenTierStateImpl state = GenTiers.getState(arena);

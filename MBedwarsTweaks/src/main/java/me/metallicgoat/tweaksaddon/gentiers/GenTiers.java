@@ -182,7 +182,6 @@ public class GenTiers implements Listener {
   }
 
 
-
   @RequiredArgsConstructor
   public static class GenTierStateImpl implements GenTierState {
 
