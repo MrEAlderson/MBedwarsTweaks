@@ -9,7 +9,7 @@
     <parent>
         <groupId>me.metallicgoat.tweaksaddon</groupId>
         <artifactId>MBedwarsTweaksParent</artifactId>
-        <version>4.6.0-Beta1</version>
+        <version>5.0.0-Beta2</version>
     </parent>
 
     <repositories>
@@ -35,7 +35,8 @@
         <dependency>
             <groupId>me.metallicgoat.tweaksaddon</groupId>
             <artifactId>API</artifactId>
-            <version>4.6.0-Beta1</version>
+            <version>5.0.0-Beta2</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
@@ -58,13 +59,13 @@
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.6</version>
+            <version>2.11.7</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>de.marcely.bedwars</groupId>
             <artifactId>API</artifactId>
-            <version>5.5.6-Beta2</version>
+            <version>5.5.6-Beta4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -84,7 +85,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.32</version>
+            <version>1.18.38</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -93,4 +94,38 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <filters>
+                        <filter>
+                            <artifact>me.metallicgoat.tweaksaddon:API</artifact>
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
+                        </filter>
+                    </filters>
+                    <artifactSet>
+                        <includes>
+                            <include>me.metallicgoat.tweaksaddon:API</include>
+                        </includes>
+                    </artifactSet>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
