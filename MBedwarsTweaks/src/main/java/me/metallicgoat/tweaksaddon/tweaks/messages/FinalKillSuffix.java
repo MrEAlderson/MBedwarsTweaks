@@ -8,11 +8,13 @@ import de.marcely.bedwars.api.message.Message;
 import me.metallicgoat.tweaksaddon.config.MainConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 
 public class FinalKillSuffix implements Listener {
 
-  @EventHandler
+  /* must be highest priority, otherwise it's not applied for cosmetics addon */
+  @EventHandler(priority= EventPriority.HIGHEST)
   public void onPlayerDeath(PlayerIngameDeathEvent e) {
     if (!MainConfig.final_kill_suffix_enabled)
       return;
