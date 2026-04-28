@@ -39,14 +39,16 @@ public class SuddenDeathHandler extends BaseGenTierHandler {
     }
 
     // Destroy all Generators
-    for (Spawner spawner : arena.getSpawners()) {
-      final Location location = spawner.getLocation().toLocation(arena.getGameWorld()).add(0, 3, 0);
+    if (MainConfig.destroy_generators_on_sudden_death) {
+      for (Spawner spawner : arena.getSpawners()) {
+        final Location location = spawner.getLocation().toLocation(arena.getGameWorld()).add(0, 3, 0);
 
-      int i = 5;
+        int i = 5;
 
-      while (location.subtract(0, 1, 0).getBlock().getType() != Material.AIR || i > 0){
-        location.getBlock().setType(Material.AIR);
-        i--;
+        while (location.subtract(0, 1, 0).getBlock().getType() != Material.AIR || i > 0) {
+          location.getBlock().setType(Material.AIR);
+          i--;
+        }
       }
     }
   }

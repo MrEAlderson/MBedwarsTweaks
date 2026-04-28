@@ -98,6 +98,13 @@ public class MainConfig {
 
   @Config(
       description = {
+          "When enabled, wholes will be drilled though the bottom of spawners to the void on sudden death"
+      }
+  )
+  public static boolean destroy_generators_on_sudden_death = true;
+  
+  @Config(
+      description = {
           "Tries to disable the dragon death sound by overriding the value set in the spigot.yml",
           "Disabling this will require a complete server restart (bw reload will not have an effect)"
       }
